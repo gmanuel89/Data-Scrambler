@@ -1,5 +1,5 @@
 ## Global statement
-global output_folder, input_file, input_file_name
+global output_folder, input_file, input_file_name, columns_to_preserve
 
 ## Import libraries needed for variable initialisation
 import os
@@ -8,3 +8,4 @@ import os
 output_folder = os.getcwd()
 input_file = ''
 input_file_name = ''
+columns_to_preserve = []

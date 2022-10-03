@@ -37,11 +37,14 @@ get_quit_button(window, QUIT_BUTTON_LABEL, ui_fonts)
 # Output folder
 get_output_folder_button(window, OUTPUT_FOLDER_BUTTON_LABEL, ui_fonts)
 get_output_folder_label(window, output_folder, ui_fonts)
+# Output folder
+get_columns_to_preserve_label(window, COLUMNS_TO_PRESERVE_LABEL, ui_fonts)
+columns_to_preserve_entry = get_columns_to_preserve_entry(window, ui_fonts, COLUMNS_TO_PRESERVE_DEFAULT_VALUE)
 # Input file selection
 get_csv_file_selection_button(window, CSV_FILE_SELECTION_BUTTON_LABEL, ui_fonts)
 get_csv_file_selection_label(window, input_file, ui_fonts)
 # CSV data scrambler
-get_data_scrambler_button(window, DATA_SCRAMBLER_BUTTON_LABEL, ui_fonts)
+get_data_scrambler_button(window, DATA_SCRAMBLER_BUTTON_LABEL, columns_to_preserve_entry, ui_fonts)
 
 ## Hold until quit
 window.mainloop()
