@@ -5,6 +5,7 @@ install_required_packages(['pandas'])
 ## Initialisation
 from data_lake.constants import *
 import data_lake.global_variables
+from data_lake.ui_constants import *
 
 ## Import functions
 from functions_ui import *
@@ -31,20 +32,20 @@ ui_fonts = get_ui_fonts(window)
 
 ## UI elements
 # Title / Info
-get_title_label(window, TITLE_LABEL, GITHUB_WIKI_URL, ui_fonts)
+get_title_label(window, TITLE_LABEL, GITHUB_WIKI_URL, ui_fonts, TITLE_LABEL_COORDINATES)
 # Quit
-get_quit_button(window, QUIT_BUTTON_LABEL, ui_fonts)
+get_quit_button(window, QUIT_BUTTON_LABEL, ui_fonts, QUIT_BUTTON_COORDINATES)
 # Output folder
-get_output_folder_button(window, OUTPUT_FOLDER_BUTTON_LABEL, ui_fonts)
-get_output_folder_label(window, output_folder, ui_fonts)
+get_output_folder_button(window, OUTPUT_FOLDER_BUTTON_LABEL, ui_fonts, OUTPUT_FOLDER_BUTTON_COORDINATES)
+get_output_folder_label(window, output_folder, ui_fonts, OUTPUT_FOLDER_LABEL_COORDINATES)
 # Output folder
-get_columns_to_preserve_label(window, COLUMNS_TO_PRESERVE_LABEL, ui_fonts)
-columns_to_preserve_entry = get_columns_to_preserve_entry(window, ui_fonts, COLUMNS_TO_PRESERVE_DEFAULT_VALUE)
+get_columns_to_preserve_label(window, COLUMNS_TO_PRESERVE_LABEL, ui_fonts, COLUMNS_TO_PRESERVE_LABEL_COORDINATES)
+columns_to_preserve_entry = get_columns_to_preserve_entry(window, ui_fonts, COLUMNS_TO_PRESERVE_DEFAULT_VALUE, COLUMNS_TO_PRESERVE_ENTRY_COORDINATES)
 # Input file selection
-get_csv_file_selection_button(window, CSV_FILE_SELECTION_BUTTON_LABEL, ui_fonts)
-get_csv_file_selection_label(window, input_file, ui_fonts)
+get_csv_file_selection_button(window, CSV_FILE_SELECTION_BUTTON_LABEL, ui_fonts, CSV_FILE_SELECTION_BUTTON_COORDINATES)
+get_csv_file_selection_label(window, input_file, ui_fonts, CSV_FILE_SELECTION_LABEL_COORDINATES)
 # CSV data scrambler
-get_data_scrambler_button(window, DATA_SCRAMBLER_BUTTON_LABEL, columns_to_preserve_entry, ui_fonts)
+get_data_scrambler_button(window, DATA_SCRAMBLER_BUTTON_LABEL, columns_to_preserve_entry, ui_fonts, DATA_SCRAMBLER_BUTTON_COORDINATES)
 
 ## Hold until quit
 window.mainloop()
