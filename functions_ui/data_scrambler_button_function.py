@@ -5,11 +5,15 @@ from functions.scramble_data_from_file import scramble_data_from_file
 from functions.write_csv_file import write_csv_file
 from functions_ui.get_columns_to_preserve_from_entry import get_columns_to_preserve_from_entry
 import data_lake.global_variables
+from data_lake.ui_constants import *
 
 ## Data Scrambler button
 def data_scrambler_button_function(columns_to_preserve_entry: tkinter.Entry):
     # Get the list of columns to preserve
     columns_to_preserve = get_columns_to_preserve_from_entry(columns_to_preserve_entry)
+    # Purge the content if left default
+    if len(columns_to_preserve) > 0 and columns_to_preserve[0] == COLUMNS_TO_PRESERVE_DEFAULT_VALUE:
+        columns_to_preserve = []
     # Retrieve values from the data lake
     input_file = data_lake.global_variables.input_file
     input_file_name = data_lake.global_variables.input_file_name
