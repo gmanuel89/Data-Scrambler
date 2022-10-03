@@ -9,6 +9,7 @@ from functions.scramble_file_data_content import scramble_file_data_content
 def scramble_data_from_file(input_file: str) -> list[dict]:
     # Initialise output
     input_data_frame_scrambled_output = []
+    """
     # Determine if it is CSV or XSLX
     if str(input_file).lower().endswith('.xlsx') or str(input_file).lower().endswith('.xls'):
         install_required_packages(['openpyxl'])
@@ -19,8 +20,9 @@ def scramble_data_from_file(input_file: str) -> list[dict]:
         input_csv_file_lines = read_csv_file(input_file, output_format='dictionary')
     else:
         return
+    """
     # Read input file as data frame
-    input_data_frame = read_data_frame(input_csv_file_lines)
+    input_data_frame = read_data_frame(input_file)
     # Scramble data content
     input_data_frame_scrambled = scramble_file_data_content(input_data_frame)
     # Return to csv format (python dictionary) (remove the pandas 'index' entry)
